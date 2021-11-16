@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./"
+    "start": "nodemon ./"
   },
   "keywords": [],
   "author": "",
@@ -16,5 +16,8 @@
     "url": "https://github.com/freshjs-fte/superheroes-crud/issues"
   },
   "homepage": "https://github.com/freshjs-fte/superheroes-crud#readme",
-  "description": ""
+  "description": "",
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
 }
