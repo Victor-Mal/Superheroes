@@ -1,0 +1,20 @@
+{
+  "name": "superheroes",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/freshjs-fte/superheroes-crud.git"
+  },
+  "bugs": {
+    "url": "https://github.com/freshjs-fte/superheroes-crud/issues"
+  },
+  "homepage": "https://github.com/freshjs-fte/superheroes-crud#readme",
+  "description": ""
+}
