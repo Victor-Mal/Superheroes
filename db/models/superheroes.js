@@ -1,10 +1,10 @@
 "use strict";
 const { Model } = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
-  class Superheroes extends Model {
+  class Superhero extends Model {
     static associate(models) {}
   }
-  Superheroes.init(
+  Superhero.init(
     {
       nickname: {
         type: DataTypes.STRING(64),
@@ -16,11 +16,13 @@ module.exports = (sequelize, DataTypes) => {
         },
       },
       realName: {
+        field: "real_name",
         type: DataTypes.STRING(64),
         unique: true,
         validate: {},
       },
       originDescription: {
+        field: "origin_description",
         type: DataTypes.TEXT,
         validate: {},
       },
@@ -30,6 +32,7 @@ module.exports = (sequelize, DataTypes) => {
         validate: {},
       },
       catchPhrase: {
+        field: "catch_phrase",
         type: DataTypes.STRING(128),
         unique: true,
         validate: {},
@@ -41,10 +44,10 @@ module.exports = (sequelize, DataTypes) => {
     },
     {
       sequelize,
-      modelName: "Superheroes",
+      modelName: "Superhero",
       tableName: "superheroes",
       underscored: true,
     }
   );
-  return Superheroes;
+  return Superhero;
 };
