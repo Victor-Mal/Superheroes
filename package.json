@@ -18,7 +18,8 @@
   "homepage": "https://github.com/freshjs-fte/superheroes-crud#readme",
   "description": "",
   "devDependencies": {
-    "nodemon": "^2.0.15"
+    "nodemon": "^2.0.15",
+    "sequelize-cli": "^6.3.0"
   },
   "dependencies": {
     "pg": "^8.7.1",
