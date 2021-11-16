@@ -2,4 +2,3 @@
 !.gitignore
 !.sequelize*
 /node_modules
-/tests
