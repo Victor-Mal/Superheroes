@@ -16,7 +16,14 @@ module.exports.getAllSupHeroes = async (req, res, next) => {
 
 module.exports.getSupHeroById = async (req, res, next) => {
   try {
-    const suphero = await Superhero.res.status(200).send({ data: 123 });
+    const {
+      params: { id },
+    } = req;
+    /* 
+               /:id/
+      */
+    const suphero = await Superhero.findOne(); // findByPK
+    res.status(200).send({ data: suphero });
   } catch (error) {
     next(error);
   }
@@ -24,13 +31,7 @@ module.exports.getSupHeroById = async (req, res, next) => {
 
 module.exports.createSupHero = async (req, res, next) => {
   try {
-    const {
-      body,
-      params: { id },
-      /* 
-               /:id/
-      */
-    } = req;
+    const { body } = req;
     const createdSuphero = await Superhero.create(body);
 
     /* if not created */
@@ -43,7 +44,8 @@ module.exports.createSupHero = async (req, res, next) => {
 
 module.exports.updateSupHero = async (req, res, next) => {
   try {
-    const updatedSuphero = await Superhero.res.status(200).send({ data: 123 });
+    const updatedSuphero = await Superhero.update({ where: { id } });
+    res.status(200).send({ data: updatedSuphero });
   } catch (error) {
     next(error);
   }
@@ -51,7 +53,8 @@ module.exports.updateSupHero = async (req, res, next) => {
 
 module.exports.deleteSupHero = async (req, res, next) => {
   try {
-    const deletedSuphero = await Superhero.res.status(200).send({ data: 123 });
+    const deletedSuphero = await Superhero.destroy({ where: { id } });
+    res.status(200).send({ data: deletedSuphero });
   } catch (error) {
     next(error);
   }
