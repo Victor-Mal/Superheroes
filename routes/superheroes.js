@@ -1,5 +1,6 @@
 const express = require("express");
 const shController = require("../controllers/superheroes");
+const validateHero = require("../middlewares/validateHero");
 
 /* Superheroes Router */
 const shRouter = express.Router();
@@ -13,14 +14,14 @@ shRouter
   /* get all */
   .get(shController.getAllSupHeroes)
   /* create */
-  .post(shController.createSupHero);
+  .post(validateHero, shController.createSupHero);
 
 shRouter
   .route("/:id")
   /* get one */
   .get(shController.getSupHeroById)
   /* update */
-  .patch(shController.updateSupHero)
+  .patch(validateHero, shController.updateSupHero)
   /* delete */
   .delete(shController.deleteSupHero);
 
