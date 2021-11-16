@@ -1,10 +1,11 @@
 const express = require("express");
-/* Main Router */
+const shRouter = require("./superheroes");
 
+/* Main Router */
 const router = express.Router();
 
-router.get("/", (req, res) => {
-  res.send("Hello Express!");
-});
+/* /api */
+
+router.use("/superheroes", shRouter);
 
 module.exports = router;
