@@ -15,9 +15,11 @@ module.exports = {
         unique: true,
       },
       realName: {
+        field: "real_name",
         type: Sequelize.STRING(64),
       },
       originDescription: {
+        field: "origin_description",
         type: Sequelize.TEXT,
       },
       superpowers: {
@@ -26,6 +28,7 @@ module.exports = {
         unique: true,
       },
       catchPhrase: {
+        field: "catch_phrase",
         type: Sequelize.STRING(128),
       },
       images: {
@@ -33,10 +36,12 @@ module.exports = {
       },
 
       createdAt: {
+        field: "created_at",
         allowNull: false,
         type: Sequelize.DATE,
       },
       updatedAt: {
+        field: "updated_at",
         allowNull: false,
         type: Sequelize.DATE,
       },
