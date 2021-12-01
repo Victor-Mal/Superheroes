@@ -1,11 +1,10 @@
 const express = require("express");
-const shRouter = require("./superheroes");
-
-/* Main Router */
 const router = express.Router();
+const shRouter = require("./superheroes");
+const sPowerRouter = require("./superpowers");
 
-/* /api */
 
 router.use("/superheroes", shRouter);
+router.use("/superpowers", sPowerRouter);
 
 module.exports = router;
