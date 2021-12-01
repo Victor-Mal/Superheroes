@@ -17,19 +17,27 @@ module.exports = {
       realName: {
         field: "real_name",
         type: Sequelize.STRING(64),
+        unique: true,
       },
       originDescription: {
         field: "origin_description",
         type: Sequelize.TEXT,
       },
-      superpowers: {
-        type: Sequelize.STRING(1000),
-        allowNull: false,
-        unique: true,
+      superpowersId: {
+        field: "superpowers_id",
+        type: Sequelize.INTEGER,
+        references: {
+          model: {
+            tableName: "superpowers",
+            schema: "public",
+          },
+          key: "id",
+        },
       },
       catchPhrase: {
         field: "catch_phrase",
         type: Sequelize.STRING(128),
+        unique: true,
       },
       images: {
         type: Sequelize.STRING(512),

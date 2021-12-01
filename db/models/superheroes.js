@@ -2,17 +2,20 @@
 const { Model } = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
   class Superhero extends Model {
-    static associate(models) {}
+    static associate(models) {
+
+    }
   }
   Superhero.init(
     {
       nickname: {
         type: DataTypes.STRING(64),
-        allowNull: false,
+        allowNull:false,
         unique: true,
         validate: {
           len: [3, 64],
           notEmpty: true,
+          notNull: true,
         },
       },
       realName: {
@@ -24,12 +27,19 @@ module.exports = (sequelize, DataTypes) => {
       originDescription: {
         field: "origin_description",
         type: DataTypes.TEXT,
-        validate: {},
+        allowNull:false,
+        validate: { 
+          notEmpty: true, 
+          notNull: true 
+        },
       },
-      superpowers: {
-        type: DataTypes.STRING(1000),
-        allowNull: false,
-        validate: {},
+      superpowersId: {
+        field: "superpowers_id",
+        type: DataTypes.INTEGER,
+        references: {  model: {
+          tableName: "superpowers",
+          schema: "public",
+        }, key: "id" },
       },
       catchPhrase: {
         field: "catch_phrase",
