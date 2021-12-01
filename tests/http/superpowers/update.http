@@ -1,0 +1,6 @@
+PATCH http://localhost:5000/api/superpowers/1
+Content-Type: application/json
+
+{
+    "description": "projecting X-rays  at maximum intensity through the eyes. can melt steel"
+}

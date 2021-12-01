@@ -1,0 +1,7 @@
+POST http://localhost:5000/api/superpowers/ HTTP/1.0
+Content-Type: application/json
+
+{
+    "name": "",
+    "description": ""
+}
